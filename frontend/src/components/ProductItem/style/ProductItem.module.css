@@ -1,0 +1,45 @@
+.product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #dfdfdf;
+    padding: 10px;
+}
+
+.title {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-weight: 600;
+}
+
+.productQuantity {
+    min-width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.productActions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonLeft {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.buttonRight {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.available {
+    color: green;
+}
+
+.outStock {
+    color: red;
+}

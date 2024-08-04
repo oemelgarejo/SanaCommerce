@@ -1,0 +1,43 @@
+.product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #dfdfdf;
+    padding: 10px;
+}
+
+.title {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-weight: 600;
+}
+
+.productQuantity {
+    min-width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.productActions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deleteButton {
+    margin-left: 10px;
+    background-color: #ee6391;
+}
+
+.deleteButton:hover {
+    background-color: #b83460;
+}
+
+.removeLink {
+    color: #b83460;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}

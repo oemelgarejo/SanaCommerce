@@ -1,0 +1,135 @@
+/* Global Styles
+* Author: Oscar Melgarejo
+* Date: 08/03/2024
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+html,
+body {
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: #007BFF;
+}
+
+.container {
+  min-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: "Montserrat", sans-serif;
+}
+
+button:disabled {
+  background-color: #b0b0b0;
+  color: #666;
+  cursor: not-allowed;
+  opacity: 0.7;
+  transition: none;
+}
+
+button:disabled:hover {
+  background-color: #b0b0b0;
+}
+
+button.mini {
+  padding: 4px 8px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Input styles */
+input[type="text"],
+input[type="number"] {
+  max-width: 50%;
+  padding: 7px 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+input[type="text"]::placeholder,
+input[type="number"]::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Header styles */
+header {
+  width: 100%;
+  background-color: #007BFF;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ffd700;
+}

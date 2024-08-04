@@ -1,0 +1,34 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dfdfdf;
+    margin-bottom: 10px;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.group input {
+    min-width: 100%;
+}
+
+.form {
+    display: flex;
+    gap: 10px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
