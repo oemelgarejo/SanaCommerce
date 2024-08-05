@@ -1,10 +1,13 @@
+-- Check if the database exists and create it if it does not
 IF NOT EXISTS (SELECT *
 FROM sys.databases
 WHERE name = 'SanaCommerceDB')
 BEGIN
-    EXEC sp_executesql N'CREATE DATABASE SanaCommerceDB';
+    -- Create the database
+    CREATE DATABASE SanaCommerceDB;
 END;
 
+-- Switch to the database
 USE SanaCommerceDB;
 
 --Category
