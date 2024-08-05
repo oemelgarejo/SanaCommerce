@@ -5,6 +5,8 @@ BEGIN
     EXEC sp_executesql N'CREATE DATABASE SanaCommerceDB';
 END
 
+USE SanaCommerceDB;
+
 --Category
 CREATE TABLE dbo.Categories
 (
