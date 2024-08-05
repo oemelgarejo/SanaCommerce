@@ -13,10 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SanaCommerce.Infrastructure
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SanaCommerce.API", "SanaCommerce.API\SanaCommerce.API.csproj", "{E410A9E4-2557-41EC-B1A9-6D2E9FEC82F0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1FAE6230-7ADF-4F55-AEE6-533AC7EA2F5A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SanaCommerce.Tests", "SanaCommerce.Tests\SanaCommerce.Tests.csproj", "{3A8434C0-9682-4EE7-B18E-025747A96AC6}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,10 +35,6 @@ Global
 		{E410A9E4-2557-41EC-B1A9-6D2E9FEC82F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E410A9E4-2557-41EC-B1A9-6D2E9FEC82F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E410A9E4-2557-41EC-B1A9-6D2E9FEC82F0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3A8434C0-9682-4EE7-B18E-025747A96AC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A8434C0-9682-4EE7-B18E-025747A96AC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A8434C0-9682-4EE7-B18E-025747A96AC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3A8434C0-9682-4EE7-B18E-025747A96AC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +47,5 @@ Global
 		{214F2E7C-9C56-4306-A9DD-37149C551BD8} = {2201F9A0-50E3-4FCB-8F86-8114B8A3C8D8}
 		{84035378-F6E7-4D55-9AA7-09E92D9F9139} = {2201F9A0-50E3-4FCB-8F86-8114B8A3C8D8}
 		{E410A9E4-2557-41EC-B1A9-6D2E9FEC82F0} = {2201F9A0-50E3-4FCB-8F86-8114B8A3C8D8}
-		{3A8434C0-9682-4EE7-B18E-025747A96AC6} = {1FAE6230-7ADF-4F55-AEE6-533AC7EA2F5A}
 	EndGlobalSection
 EndGlobal

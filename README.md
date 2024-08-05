@@ -1,4 +1,4 @@
-# Project
+# Sana Commerce - Developer Test | Oscar Melgarejo
 
 This repository is organized into three main folders: `frontend`, `backend`, and `database`. Below is a description of the technologies used and how to run each part of the project.
 
@@ -40,21 +40,21 @@ This repository is organized into three main folders: `frontend`, `backend`, and
      ```
   5. The API will be available at [http://localhost:5000](http://localhost:5000) (may vary based on configuration).
 
+  6. For connect to database first run de script file in database folder after that please change connection string in `SanaCommerce.API/appsettings.json` SanaCommerceConnectionString.
+
+  if you want work with Database First please go to a `SanaCommerce.Infrastructure` and change the connection string in `Data/ApplicationDbContextFactory` and in a terminal run the following command:
+   ```bash
+   dotnet ef migrations add InitialMigrations
+   dotnet ef database update
+   ```
+
 ### 3. Database
 
 - **Description**: The `database` folder contains the SQL script needed to create and populate the database, as well as the database diagram.
 - **Files**:
-  - `schema.sql`: SQL script to create the database schema and populate initial data.
-  - `diagram.png`: Visual diagram of the database.
+  - `sanacommerce-script.sql`: SQL script to create the database schema and populate initial data.
+  - `diagram.jpeg`: Visual diagram of the database.
 - **Usage**:
-  1. Connect to your PostgreSQL server (or the SQL server you are using).
-  2. Execute the `schema.sql` script to create tables and seed initial data.
+  1. Connect to your MSSQL server.
+  2. Execute the `sanacommerce-script.sql` script to create tables and seed initial data.
   3. Use the diagram to understand the database structure and relationships.
-
-## Contributing
-
-If you wish to contribute to this project, please follow these steps:
-1. Fork the repository.
-2. Create a branch for your change:
-   ```bash
-   git checkout -b feature/new-feature

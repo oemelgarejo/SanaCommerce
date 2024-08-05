@@ -9,7 +9,7 @@ namespace SanaCommerce.Infrastructure.Data
         public ApplicationDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-            optionsBuilder.UseNpgsql("Server=localhost;Port=5433;Database=SanaCommerceDB;User Id=postgres;Password=postgres");
+            optionsBuilder.UseSqlServer("Server=localhost;Database=SanaCommerceDB;User Id=your_username;Password=your_password;");
 
             return new ApplicationDbContext(optionsBuilder.Options);
         }
