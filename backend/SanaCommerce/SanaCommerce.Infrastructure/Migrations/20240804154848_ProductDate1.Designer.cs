@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SanaCommerce.Infrastructure.Data;
@@ -11,9 +12,11 @@ using SanaCommerce.Infrastructure.Data;
 namespace SanaCommerce.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240804154848_ProductDate1")]
+    partial class ProductDate1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -154,8 +157,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("09ebc12a-dcfa-4847-94f5-f4ff69d4d37a"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1010), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("256d30f6-76da-49c0-93ef-a394c5142799"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3360), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "High performance laptop",
                             Price = 1200.99m,
                             ProductCode = "LAP123",
@@ -164,8 +167,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("218519d2-cd32-4e63-8c5d-5b19c2e2e9ba"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1070), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("0b9cdcb9-a2cf-4676-b069-e386549f9386"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3680), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "Latest model smartphone",
                             Price = 899.99m,
                             ProductCode = "SMP456",
@@ -174,8 +177,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8d9d6b1d-0dfb-4c6c-9f0e-d4db8898173f"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1070), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("99b29f56-c34b-4ee8-871a-670655708338"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3690), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "Noise cancelling headphones",
                             Price = 199.99m,
                             ProductCode = "HDP789",
@@ -184,8 +187,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("357f9a0b-346a-4c01-8ed2-9f5005a8cb5f"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1080), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("c98975ad-db22-448a-a91f-9ece217cc836"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3690), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "Smartwatch with health tracking",
                             Price = 299.99m,
                             ProductCode = "SMW012",
@@ -194,8 +197,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("686d597e-bc64-479c-aab9-9a766ed63a82"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1080), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("f36b4c36-846d-4061-966f-13964784b432"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3700), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "High resolution tablet",
                             Price = 499.99m,
                             ProductCode = "TAB345",
@@ -204,8 +207,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("fe14ff54-1c6c-45a8-bf62-9c5990da8573"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1090), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("86249afd-3c34-410e-8a8d-07f7b9319f3f"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3700), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "Portable Bluetooth speaker",
                             Price = 89.99m,
                             ProductCode = "BSP678",
@@ -214,8 +217,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6c0bb29e-45d3-40d6-9aa8-e86449e8e29d"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1090), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("542fbc65-792d-467e-af93-a22c5771b720"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3710), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "Digital SLR camera",
                             Price = 799.99m,
                             ProductCode = "CAM901",
@@ -224,8 +227,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f69ba2f2-9568-4e27-8c02-1fe81fe52d47"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1090), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("31fc9572-1abd-447b-bf8a-24283bc3ac6e"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3710), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "Next-gen gaming console",
                             Price = 499.99m,
                             ProductCode = "GMC234",
@@ -234,8 +237,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b579cf92-efd5-4960-9405-e45957a56f0c"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1100), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("e1830ee0-e4d1-4d07-bcf6-ef9cb8a85f4a"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3720), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "Fast boiling electric kettle",
                             Price = 39.99m,
                             ProductCode = "EKT567",
@@ -244,8 +247,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9e050546-c17e-4681-8348-64106e5a2443"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1100), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("84a38b7e-01e6-4253-8a5f-c769b86e17a6"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3720), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "Compact microwave oven",
                             Price = 129.99m,
                             ProductCode = "MWO890",
@@ -254,8 +257,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("4a7deb44-4cec-4ac2-9498-dd0aa2fd558e"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1110), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("adc99544-f06b-4c3a-ab9f-684735e57d38"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3730), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "High-speed blender",
                             Price = 59.99m,
                             ProductCode = "BLD123",
@@ -264,8 +267,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0da731d3-1802-4a4f-8158-be973e147ce0"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1110), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("f9bc788a-24eb-4082-9866-8f0fb08ad970"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3730), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "Automatic coffee maker",
                             Price = 79.99m,
                             ProductCode = "CFM456",
@@ -274,8 +277,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("79722887-2e83-4457-8dac-8ba24f79188e"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1120), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("740aec81-e358-4d61-9cc3-39743f126fdd"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3740), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "Double door refrigerator",
                             Price = 1099.99m,
                             ProductCode = "RFR789",
@@ -284,8 +287,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("401ed72f-6eab-4f55-9325-37e74dc9c327"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1120), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("3e9d6c5d-eb58-493b-b71e-a18cd873fb01"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3740), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "Front load washing machine",
                             Price = 699.99m,
                             ProductCode = "WSM012",
@@ -294,8 +297,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9ab75f70-738c-40a6-b44f-5a40dcefc04c"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1120), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("4fd36778-c189-4b3b-a214-0e759a36c0ab"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3750), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "Energy efficient air conditioner",
                             Price = 499.99m,
                             ProductCode = "ACD345",
@@ -304,8 +307,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e81b4b99-fb86-4af5-8209-8b0f15763557"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1130), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("d2d2a4f9-f74b-4a4d-8aea-20493c2991d5"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3750), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "Cordless vacuum cleaner",
                             Price = 149.99m,
                             ProductCode = "VAC678",
@@ -314,8 +317,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("35dcdc75-a20c-4886-833f-37120182470d"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1130), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("16c65138-db8d-457b-b64c-ec0f90aa44c8"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3760), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "4K Ultra HD television",
                             Price = 799.99m,
                             ProductCode = "TVN901",
@@ -324,8 +327,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("3aa5bc03-a313-4b5c-8657-7cf85ab82e51"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1140), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("b817b853-00a2-4661-bb39-0d58bc56b934"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3760), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "Dolby Atmos soundbar",
                             Price = 299.99m,
                             ProductCode = "SBR234",
@@ -334,8 +337,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0c23e156-b0bd-447b-9bea-c98a064d3ef5"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1140), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("4cd3198d-2f63-4f79-ae78-3dab0c2f1145"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3770), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "High-speed WiFi router",
                             Price = 99.99m,
                             ProductCode = "RTR567",
@@ -344,8 +347,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8ba89df0-6e67-4bed-88d7-b62f1722dafd"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1140), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("853dde7f-6f88-4c21-8fe2-0f0fb3b5d0ef"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3770), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "1TB external hard drive",
                             Price = 59.99m,
                             ProductCode = "EHD890",
@@ -354,8 +357,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("fe4a39be-40db-4762-82af-6b031ab0cd16"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1150), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("f55a7c21-aba7-4e07-bbcb-a6d613a614dd"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3780), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "24-inch full HD monitor",
                             Price = 149.99m,
                             ProductCode = "MNT123",
@@ -364,8 +367,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("2868c7ca-f9df-480b-8552-af80a4f91b89"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1150), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("389c1a63-7249-49b7-8d71-d086c30a6bb8"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3780), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "Mechanical keyboard",
                             Price = 79.99m,
                             ProductCode = "KYB456",
@@ -374,8 +377,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6537dd9f-84be-4ec9-a089-6a12affb0737"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1160), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("2b19fc1f-7e5c-4072-93ae-2154ed8a0264"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3780), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "Wireless mouse",
                             Price = 29.99m,
                             ProductCode = "MSE789",
@@ -384,8 +387,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("03c85f68-84eb-4342-b5d1-514b853be3ce"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1160), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("f88fa99e-cbbf-41f0-80b5-93789547770d"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3790), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "All-in-one printer",
                             Price = 199.99m,
                             ProductCode = "PRT012",
@@ -394,8 +397,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("1d4f3159-2af7-4631-ab0a-a7f20edb2d66"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1160), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("7db72d78-187d-48ca-b4cd-77d455065e7f"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3790), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "High-speed document scanner",
                             Price = 99.99m,
                             ProductCode = "SCN345",
@@ -404,8 +407,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("167ec7b2-927d-421f-b935-22af153b5c55"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1170), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("c5249b52-b01d-442b-9797-0c7349b52e18"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3800), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "HD webcam",
                             Price = 49.99m,
                             ProductCode = "WBC678",
@@ -414,8 +417,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8168f564-0b41-48fd-ac7d-ce087077a754"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1170), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("6d206f53-cc92-4fb4-ac40-ec5eb6208870"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3800), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "Activity and sleep tracker",
                             Price = 99.99m,
                             ProductCode = "FTR901",
@@ -424,8 +427,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c34527c1-8790-44f3-8f6a-171b8f1929d0"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1180), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("998cc45a-7bc0-4c19-ad3b-f45eaa35faee"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3810), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "Rechargeable electric toothbrush",
                             Price = 69.99m,
                             ProductCode = "ETB234",
@@ -434,8 +437,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("1690f4a0-b729-4a01-873a-d27c585cde4c"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1180), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("f4ebe020-f618-4ef3-b30c-244a0e8e7f4a"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3810), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "Professional hair dryer",
                             Price = 59.99m,
                             ProductCode = "HDR567",
@@ -444,8 +447,8 @@ namespace SanaCommerce.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("72242d86-f9b3-4c32-a826-84892174c7af"),
-                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 15, 51, 39, 215, DateTimeKind.Unspecified).AddTicks(1190), new TimeSpan(0, 0, 0, 0, 0)),
+                            Id = new Guid("cb0cb708-932d-4d74-874f-f0aa72ca002a"),
+                            CreatedAt = new DateTimeOffset(new DateTime(2024, 8, 4, 10, 48, 48, 818, DateTimeKind.Unspecified).AddTicks(3820), new TimeSpan(0, -5, 0, 0, 0)),
                             Description = "Automatic espresso machine",
                             Price = 399.99m,
                             ProductCode = "ESM890",

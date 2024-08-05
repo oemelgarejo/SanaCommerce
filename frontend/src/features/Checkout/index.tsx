@@ -2,7 +2,7 @@ import { IconArrowLeft, IconCheck } from "@tabler/icons-react";
 import TotalLabel from "../../components/TotalLabel";
 import style from "./Checkout.module.css";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SanaAPI } from "../../api/sanaAPI";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
@@ -10,6 +10,7 @@ import { clearCart } from "../../redux/reducers/shoppingCartSlice";
 
 function Checkout() {
   const [loading, setLoading] = useState(false);
+  const [disabledButton, setDisabledButton] = useState(false);
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
@@ -20,6 +21,10 @@ function Checkout() {
     navigate("/cart");
   };
 
+  useEffect(() => {
+    setDisabledButton(!fullName || !email);
+  }, [fullName, email]);
+
   const handleCheckout = async () => {
     setLoading(true);
     try {
@@ -27,7 +32,7 @@ function Checkout() {
         productId: product.id,
         quantity,
       }));
-      const { data } = await SanaAPI.post("/api/shoppingcart", {
+      const { data } = await SanaAPI.post("/api/orders", {
         fullName,
         email,
         shoppingCartItems: items,
@@ -77,7 +82,7 @@ function Checkout() {
           <button
             className={style.btn}
             onClick={handleCheckout}
-            disabled={loading}
+            disabled={loading || disabledButton}
           >
             {loading ? (
               "Processing..."

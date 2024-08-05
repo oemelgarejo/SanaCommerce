@@ -4,10 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using SanaCommerce.Application.Commands;
 using SanaCommerce.Application.DTOs;
 using SanaCommerce.Application.Queries;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace SanaCommerce.API.Controllers
 {
@@ -22,7 +21,11 @@ namespace SanaCommerce.API.Controllers
             _mediator = mediator;
         }
 
-        // GET: api/values
+        /// <summary>
+        /// Endpoint for get all products with 10 records per page
+        /// </summary>
+        /// <param name="pageNumber">Number of page</param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetAllProducts(int? pageNumber)
         {
@@ -36,30 +39,28 @@ namespace SanaCommerce.API.Controllers
             });
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
 
-        // POST api/values
+        /// <summary>
+        /// Create a new product
+        /// </summary>
+        /// <param name="productDto">Dto for product</param>
+        /// <returns></returns>
         [HttpPost]
-        public void Post([FromBody]string value)
+        public async Task<IActionResult> Post([FromBody]ProductDto productDto)
         {
+            try
+            {
+                var command = new CreateProductCommand.Command(productDto);
+                ProductDto productCreated = await _mediator.Send(command);
+                return Ok(productCreated);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }
 

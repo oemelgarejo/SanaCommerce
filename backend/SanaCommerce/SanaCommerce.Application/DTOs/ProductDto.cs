@@ -11,7 +11,7 @@ namespace SanaCommerce.Application.DTOs
         public string Description { get; set; }
         public decimal Price { get; set; }
         public int Stock { get; set; }
-        public IEnumerable<ProductCategory> ProductCategories { get; set; }
+        public IEnumerable<ProductCategory>? ProductCategories { get; set; }
     }
 }
 

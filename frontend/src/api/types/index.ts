@@ -42,6 +42,7 @@ export interface OrderItem {
   productId: string;
   product: Product;
   quantity: number;
+  total: number;
 }
 
 export interface ShoppingCartItem {

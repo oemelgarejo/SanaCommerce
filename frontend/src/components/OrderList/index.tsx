@@ -4,32 +4,23 @@ import { useEffect } from "react";
 import {
   decrementPage,
   incrementPage,
-  loadProducts,
-} from "../../redux/reducers/productSlice";
-import ProductItem from "../ProductItem";
-import { Product } from "../../api/types";
-import { useNavigate } from "react-router-dom";
+  loadOrders,
+} from "../../redux/reducers/orderSlice";
+import { Order } from "../../api/types";
 
-function ProductList() {
+function OrderList() {
   const dispatch = useDispatch<AppDispatch>();
-  const navigate = useNavigate();
+
   const {
-    items: products,
+    items: orders,
     isLoading,
     error,
     pageNumber: currentPage,
     totalPages,
-  } = useSelector((state: RootState) => state.products);
-
-  const cartItems = useSelector((state: RootState) => state.shoppingCart.items);
-
-  const getProductQuantity = (productId: string) => {
-    const item = cartItems.find((item) => item.product.id === productId);
-    return item ? item.quantity : 0;
-  };
+  } = useSelector((state: RootState) => state.orders);
 
   useEffect(() => {
-    dispatch(loadProducts(currentPage));
+    dispatch(loadOrders(currentPage));
   }, [dispatch, currentPage]);
 
   const handleNextPage = () => {
@@ -41,24 +32,38 @@ function ProductList() {
   };
 
   return (
-    <div className="container">
+    <div>
       {isLoading ? (
         <p>Loading...</p>
       ) : error ? (
         <p>Error: {error}</p>
       ) : (
         <>
-          <div style={{ display: "flex", justifyContent: "flex-end" }}>
-            <button onClick={() => navigate("add-product")}>Add product</button>
-          </div>
-
-          {products?.map((product: Product) => (
-            <ProductItem
-              key={product.id}
-              product={product}
-              quantity={getProductQuantity(product.id)}
-            />
-          ))}
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Customer</th>
+                <th>Products</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {orders?.map(({ id, orderDate, orderItems, customer }: Order) => (
+                <tr key={id}>
+                  <td>{new Date(orderDate).toDateString()}</td>
+                  <td>{customer?.fullName}</td>
+                  <td align="center">{orderItems.length}</td>
+                  <td align="right">
+                    $
+                    {orderItems
+                      .reduce((acc, item) => acc + item.total, 0)
+                      .toFixed(2)}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </>
       )}
       <div
@@ -81,4 +86,4 @@ function ProductList() {
   );
 }
 
-export default ProductList;
+export default OrderList;

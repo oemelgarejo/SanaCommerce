@@ -1,32 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SanaCommerce.Application.Commands;
 using SanaCommerce.Application.DTOs;
 using SanaCommerce.Application.Queries;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace SanaCommerce.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class ShoppingCartController : ControllerBase
+    public class OrdersController : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public ShoppingCartController(IMediator mediator)
+        public OrdersController(IMediator mediator)
         {
             _mediator = mediator;
         }
 
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IActionResult> GetAllOrders(int? pageNumber)
         {
-            return new string[] { "value1", "value2" };
+            int page = pageNumber ?? 1;
+            var query = new GetAllOrdersQuery.Query(page);
+            var (orders, totalPages) = await _mediator.Send(query);
+            return Ok(new
+            {
+                Orders = orders,
+                TotalPages = totalPages
+            });
         }
 
         [HttpPost]

@@ -24,7 +24,7 @@ namespace SanaCommerce.Infrastructure.Repositories
 
         public async Task<IEnumerable<Product>> GetAllProductsAsync(int pageNumber, int pageSize)
         {
-            return await _context.Products.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync();
+            return await _context.Products.Skip((pageNumber - 1) * pageSize).Take(pageSize).OrderByDescending(x=> x.CreatedAt).ToListAsync();
         }
 
         public async Task<Product?> GetProductByIdAsync(Guid id)
