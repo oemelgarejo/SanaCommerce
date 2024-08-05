@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using SanaCommerce.API.DTOs;
 using SanaCommerce.Application.Commands;
 using SanaCommerce.Application.DTOs;
 using SanaCommerce.Application.Queries;
@@ -32,11 +33,12 @@ namespace SanaCommerce.API.Controllers
             int page = pageNumber ?? 1;
             var query = new GetAllProductsQuery.Query(page);
             var (products, totalPages) = await _mediator.Send(query);
-            return Ok(new
+            var response = new ProductResponse
             {
                 Products = products,
                 TotalPages = totalPages
-            });
+            };
+            return Ok(response);
         }
 
 
