@@ -1,8 +1,10 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using SanaCommerce.API.DTOs;
 using SanaCommerce.Application.Commands;
 using SanaCommerce.Application.DTOs;
 using SanaCommerce.Application.Queries;
+using SanaCommerce.Domain.Entities;
 
 namespace SanaCommerce.API.Controllers
 {
@@ -23,11 +25,12 @@ namespace SanaCommerce.API.Controllers
             int page = pageNumber ?? 1;
             var query = new GetAllOrdersQuery.Query(page);
             var (orders, totalPages) = await _mediator.Send(query);
-            return Ok(new
+            var response = new OrderResponse
             {
                 Orders = orders,
                 TotalPages = totalPages
-            });
+            };
+            return Ok(response);
         }
 
         [HttpPost]
