@@ -29,6 +29,9 @@ const shoppingCartSlice = createSlice({
 
       if (item) {
         item.quantity += 1;
+        if (item.quantity > item.product.stock) {
+          item.quantity = item.product.stock;
+        }
       } else {
         if (action.payload.stock >= 1) {
           state.items.push({ product: action.payload, quantity: 1 });

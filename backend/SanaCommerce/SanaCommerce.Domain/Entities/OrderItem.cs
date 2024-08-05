@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace SanaCommerce.Domain.Entities
 {
 	public class OrderItem
