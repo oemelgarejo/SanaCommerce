@@ -3,7 +3,7 @@ FROM sys.databases
 WHERE name = 'SanaCommerceDB')
 BEGIN
     EXEC sp_executesql N'CREATE DATABASE SanaCommerceDB';
-END
+END;
 
 USE SanaCommerceDB;
 
