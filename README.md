@@ -18,7 +18,7 @@ This repository is organized into three main folders: `frontend`, `backend`, and
      ```bash
      npm start
      ```
-  4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
+  4. Open [http://localhost:5173](http://localhost:5173) in your browser to view the application.
 
 ### 2. Backend
 
@@ -58,3 +58,10 @@ This repository is organized into three main folders: `frontend`, `backend`, and
   1. Connect to your MSSQL server.
   2. Execute the `sanacommerce-script.sql` script to create tables and seed initial data.
   3. Use the diagram to understand the database structure and relationships.
+### Some screenshots
+![Screenshot 2024-08-05 at 2 02 41 PM](https://github.com/user-attachments/assets/2d4763ed-391f-4fc3-b4da-0177129e8016)
+
+![Screenshot 2024-08-05 at 2 04 22 PM](https://github.com/user-attachments/assets/becb1445-d0d4-41da-98c5-5a505f4c19ad)
+
+![Screenshot 2024-08-05 at 2 05 10 PM](https://github.com/user-attachments/assets/309efa3f-c418-40c3-a645-d395b102658c)
+
