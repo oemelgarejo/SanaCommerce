@@ -1,23 +1,22 @@
--- Check if the database exists and create it if it does not
 IF NOT EXISTS (SELECT *
 FROM sys.databases
 WHERE name = 'SanaCommerceDB')
 BEGIN
-    -- Create the database
-    CREATE DATABASE SanaCommerceDB;
+    EXEC sp_executesql N'CREATE DATABASE SanaCommerceDB';
 END;
+GO
 
--- Switch to the database
 USE SanaCommerceDB;
+GO
 
---Category
+-- Category
 CREATE TABLE dbo.Categories
 (
     Id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
     Name NVARCHAR(100) NOT NULL
 );
 
---Customer
+-- Customer
 CREATE TABLE dbo.Customers
 (
     Id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
@@ -27,7 +26,7 @@ CREATE TABLE dbo.Customers
 CREATE INDEX IX_Customers_Email
 ON dbo.Customers (Email);
 
---Product
+-- Product
 CREATE TABLE dbo.Products
 (
     Id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
@@ -41,6 +40,7 @@ CREATE TABLE dbo.Products
 CREATE INDEX IX_Products_ProductCode
 ON dbo.Products (ProductCode);
 
+-- Orders
 CREATE TABLE dbo.Orders
 (
     Id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
@@ -49,12 +49,13 @@ CREATE TABLE dbo.Orders
     FOREIGN KEY (CustomerId) REFERENCES dbo.Customers(Id)
 );
 
+-- OrderItems
 CREATE TABLE dbo.OrderItems
 (
     OrderId UNIQUEIDENTIFIER NOT NULL,
     ProductId UNIQUEIDENTIFIER NOT NULL,
     Quantity INT NOT NULL,
-    PRIMARY KEY (OrderId),
+    PRIMARY KEY (OrderId, ProductId),
     FOREIGN KEY (OrderId) REFERENCES dbo.Orders(Id),
     FOREIGN KEY (ProductId) REFERENCES dbo.Products(Id)
 );
@@ -65,6 +66,7 @@ ON dbo.OrderItems (OrderId);
 CREATE INDEX IX_Orders_CustomerId
 ON dbo.Orders (CustomerId);
 
+-- ProductCategories
 CREATE TABLE dbo.ProductCategories
 (
     ProductId UNIQUEIDENTIFIER NOT NULL,
@@ -74,14 +76,15 @@ CREATE TABLE dbo.ProductCategories
     FOREIGN KEY (CategoryId) REFERENCES dbo.Categories(Id)
 );
 
+-- Insert categories
 INSERT INTO dbo.Categories
-    (Id, Name)
+    (Name)
 VALUES
-    (NEWID(), 'Electronics'),
-    (NEWID(), 'Books'),
-    (NEWID(), 'Clothing');
+    ('Electronics'),
+    ('Books'),
+    ('Clothing');
 
---Create products
+-- Insert products
 INSERT INTO dbo.Products
     (Title, ProductCode, Description, Price, Stock)
 VALUES
